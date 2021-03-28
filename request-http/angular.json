@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "request-http": {
+    "requests-http": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -30,6 +30,9 @@
         },
         "@schematics/angular:service": {
           "skipTests": true
+        },
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "root": "",
@@ -39,7 +42,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/request-http",
+            "outputPath": "dist/requests-http",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,13 +75,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -87,18 +90,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "request-http:build"
+            "browserTarget": "requests-http:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "request-http:build:production"
+              "browserTarget": "requests-http:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "request-http:build"
+            "browserTarget": "requests-http:build"
           }
         },
         "test": {
@@ -135,18 +138,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "request-http:serve"
+            "devServerTarget": "requests-http:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "request-http:serve:production"
+              "devServerTarget": "requests-http:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "request-http",
+  "defaultProject": "requests-http",
   "cli": {
     "analytics": false
   }
