@@ -18,18 +18,20 @@
         </tr>
       </thead>
       <tbody>
-        <td></td>
-        <td></td>
-        <td>
-          <span class="float-right">
-            <button class="btn btn-outline-warning mb-1 btn-sm">
-              Atualizar
-            </button>
-            <button class="btn btn-outline-danger mb-1 btn-sm">
-              Remover
-            </button>
-          </span>
-        </td>
+        <tr *ngFor="let curso of cursos">
+          <td> {{curso.id}} </td>
+          <td> {{curso.nome}} </td>
+          <td>
+            <span class="float-right">
+              <button class="btn btn-outline-warning mb-1 btn-sm">
+                Atualizar
+              </button>
+              <button class="btn btn-outline-danger mb-1 btn-sm">
+                Remover
+              </button>
+            </span>
+          </td>
+        </tr>
       </tbody>
     </table>
 
@@ -48,4 +50,6 @@
       -->
     </div>
   </ng-template>
+
+  <p *ngIf="cursos.length==0">Nenhum curso cadastrado.</p>
 </div>

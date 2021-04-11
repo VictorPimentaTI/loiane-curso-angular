@@ -8,3 +8,4 @@ export const CursosRoutes: Routes = [
     component: CursosListaComponent
   }
 ];
+export class CursosRoutingModule {}

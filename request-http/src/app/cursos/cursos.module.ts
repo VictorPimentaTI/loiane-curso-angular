@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import { CursosRoutingModule } from './cursos-routing.module';
 import { CursosListaComponent } from './cursos-lista/cursos-lista.component';
-
+import { CursosService } from './cursos.service';
 
 @NgModule({
-  declarations: [CursosListaComponent],
+  declarations: [
+    CursosListaComponent
+  ],
   imports: [
     CommonModule,
-    CursosRoutingModule
+    FormsModule
+  ],
+  providers: [
+    CursosService
   ]
 })
 export class CursosModule { }
